@@ -6,7 +6,7 @@ const QRCode = () => {
   //state
   const [qrCodeData, setQrCodeData] = useState([]);
   useEffect(() => {
-    fetch(`${server}/qrcode`)
+    fetch(`${server}/qrcodeData`)
       .then((res) => res.json())
       .then((data) => setQrCodeData(data));
   }, [qrCodeData]);
