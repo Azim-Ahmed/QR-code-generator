@@ -1,8 +1,10 @@
 import { useForm } from 'react-hook-form';
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import { server } from '../../urlConfig';
 
 const FormSection = () => {
+  let history = useHistory();
   //get Data from react hook form
   const { register, handleSubmit, errors, reset } = useForm();
   const onSubmit = (data) => {
@@ -14,6 +16,7 @@ const FormSection = () => {
       if (res) {
         alert('QRcode GeneRated');
         reset();
+        history.push('/data');
       }
     });
   };
